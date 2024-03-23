@@ -1,10 +1,17 @@
+#!/usr/bin/env bash
 # Note: This file usually gets sourced.
+if [[ -v $PYTHON_VENV_TEST_ROOT ]]; then
+    echo "Script already sourced! Please open a new terminal."
+    return 0
+fi
+
+PYTHON_VENV_TEST_ROOT=$(git rev-parse --show-toplevel)
 
 # Create python virtual environment
-python3 -m venv ./.venv
+python3 -m venv "$PYTHON_VENV_TEST_ROOT/.venv"
 
-# Activate teh environment
-source ./.venv/bin/activate
+# Activate the environment
+source "$PYTHON_VENV_TEST_ROOT/.venv/bin/activate"
 
 # Install required packages
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r "$PYTHON_VENV_TEST_ROOT/requirements.txt"
