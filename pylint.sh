@@ -1,1 +1,2 @@
-pylint *.py
+#!/usr/bin/env bash
+pylint ./*.py
