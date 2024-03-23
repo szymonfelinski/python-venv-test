@@ -11,6 +11,7 @@ PYTHON_VENV_TEST_ROOT=$(git rev-parse --show-toplevel)
 python3 -m venv "$PYTHON_VENV_TEST_ROOT/.venv"
 
 # Activate the environment
+# shellcheck disable=SC1091
 source "$PYTHON_VENV_TEST_ROOT/.venv/bin/activate"
 
 # Install required packages
