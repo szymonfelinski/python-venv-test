@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Note: This file usually gets sourced.
-if [[ -v $PYTHON_VENV_TEST_ROOT ]]; then
+if [[ -n $PYTHON_VENV_TEST_ROOT ]]; then
     echo "Script already sourced! Please open a new terminal."
     return 0
 fi
